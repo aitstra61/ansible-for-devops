@@ -1,4 +1,5 @@
 ---
+file_location: /var/lib/awx/projects/_16__ansible_for_devops/https-self-signed/provisioning/
 # Firewall settings.
 firewall_allowed_tcp_ports:
   - "22"

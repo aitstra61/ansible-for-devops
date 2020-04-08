@@ -2,8 +2,7 @@
 - hosts: all
 
   vars_files:
-    - vars/main.yml
-  file_location: /var/lib/awx/projects/_16__ansible_for_devops/https-self-signed/provisioning/
+    - /var/lib/awx/projects/_16__ansible_for_devops/https-self-signed/provisioning/vars/main.yml
 
   pre_tasks:
     - name: Ensure apt cache is updated.
