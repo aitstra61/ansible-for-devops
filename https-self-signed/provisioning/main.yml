@@ -2,7 +2,8 @@
 - hosts: all
 
   vars_files:
-    - vars/main.yml
+    - {{ file_location }}vars/main.yml
+  file_location: /var/lib/awx/projects/_16__ansible_for_devops/https-self-signed/provisioning/
 
   pre_tasks:
     - name: Ensure apt cache is updated.
@@ -17,7 +18,7 @@
     - geerlingguy.nginx
 
   tasks:
-    - import_tasks: tasks/self-signed-cert.yml
+    - import_tasks: {{ file_location }}tasks/self-signed-cert.yml
 
     - name: Ensure docroot exists.
       file:
@@ -26,13 +27,13 @@
 
     - name: Copy example index.html file in place.
       copy:
-        src: files/index.html
+        src: "{{ file_location }}files/index.html"
         dest: "{{ nginx_docroot }}/index.html"
         mode: 0755
 
     - name: Copy Nginx server configuration in place.
       template:
-        src: templates/https.test.conf.j2
+        src: "{{ file_location }}templates/https.test.conf.j2"
         dest: /etc/nginx/sites-enabled/https.test.conf
         mode: 0644
       notify: restart nginx
