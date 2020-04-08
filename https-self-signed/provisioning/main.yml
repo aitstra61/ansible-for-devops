@@ -2,7 +2,7 @@
 - hosts: all
 
   vars_files:
-    - "{{ file_location }}vars/main.yml"
+    - vars/main.yml
   file_location: /var/lib/awx/projects/_16__ansible_for_devops/https-self-signed/provisioning/
 
   pre_tasks:
