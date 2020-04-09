@@ -34,7 +34,7 @@
 
     - name: Transfer example Node.js app from AWX repo to server.
       copy:
-        src: '{{file_location}}/nodejs/provision/app'
+        src: '{{file_location}}/nodejs/provisioning/app'
         dest: "{{ node_apps_location }}"
 
     - name: Install app dependencies defined in package.json.
