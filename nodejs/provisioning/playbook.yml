@@ -4,7 +4,7 @@
 
   vars:
     node_apps_location: /usr/local/opt/node
-      file_location: /var/lib/awx/projects/_16__ansible_for_devops
+    file_location: /var/lib/awx/projects/_16__ansible_for_devops
 
   tasks:
     - name: Install EPEL repo.
