@@ -1,0 +1,18 @@
+---
+sudo chkconfig rabbitmq-server on
+
+# Startup rabbitmq
+
+sudo /sbin/service rabbitmq-server start
+
+# Enable the UI
+
+sudo rabbitmq-plugins enable rabbitmq_management
+
+# Add user test and make admin so we can get in remotely
+
+sudo rabbitmqctl add_user test test
+
+sudo rabbitmqctl set_user_tags test administrator
+
+sudo rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
